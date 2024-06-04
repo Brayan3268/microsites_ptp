@@ -37,3 +37,16 @@ jobs:
     #    DB_CONNECTION: mysql
     #    DB_DATABASE: database/database.mysql
     #  run: php artisan test
+
+  push:
+    runs-on: ubuntu-latest
+    needs: laravel-tests  # Este paso depende del paso de construcción anterior
+  
+    steps:
+    - name: Check if build failed
+      run: exit ${{ job.status }}  # Salir con el estado de la construcción actual
+  
+    - name: Push changes to repository
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Token de acceso de GitHub
