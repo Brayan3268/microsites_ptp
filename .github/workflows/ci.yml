@@ -18,8 +18,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: Install Dependencies
-      run: composer require laravel/breeze --dev
+    #- name: Install Dependencies
+    #  run: composer require laravel/breeze --dev
     #- name: Install other dependencie
     #  run: php artisan breeze:install blade
     #  working-directory: microsites_ptp/artisan
