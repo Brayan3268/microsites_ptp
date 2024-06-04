@@ -66,6 +66,30 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
+## GIT FLOW to features
+
+git checkout main
+git checkout -b develop
+git checkout -b feature_branch
+# work happens on feature branch
+git checkout develop
+git merge feature_branch
+git checkout -b release/0.0.0
+git checkout main
+git merge release/0.0.0
+git merge develop
+git merge release/0.0.0
+git branch -d feature_branch
+
+## GIT FLOW to hotfix
+
+git checkout main
+git checkout -b hotfix_branch
+# work is done commits are added to the hotfix_branch
+git checkout develop
+git merge hotfix_branch
+git checkout main
+git merge hotfix_branch
 
 
 ## How to install the project
