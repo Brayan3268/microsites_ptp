@@ -44,7 +44,7 @@ jobs:
   
     steps:
     - name: Check if laravel-tests failed
-      run: exit ${{ job.status }}  # Salir con el estado de la construcción actual
+      run: exit ${{ 1 }}  # Salir con el estado de la construcción actual
   
     - name: Push changes to repository
       uses: ad-m/github-push-action@master
