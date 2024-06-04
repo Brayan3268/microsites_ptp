@@ -27,9 +27,9 @@ jobs:
         ini-values: post_max_size=256M, upload_max_filesize=256M
         coverage: none
 
-    - name: Install Composer dependencies
+    #- name: Install Composer dependencies
       #run: composer update --prefer-dist --no-progress --no-suggest
-      run: composer require laravel/breeze --dev
+     # run: composer require laravel/breeze --dev
     - name: Copy .env.example to .env
       #run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       run: cp .env.example .env
