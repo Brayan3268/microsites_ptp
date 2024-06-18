@@ -1,6 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
+<p>
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
@@ -66,6 +66,30 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
+## GIT FLOW to features
+
+git checkout main
+git checkout -b develop
+git checkout -b feature_branch
+# work happens on feature branch
+git checkout develop
+git merge feature_branch
+git checkout -b release/0.0.0
+git checkout master
+git merge release/0.0.0
+git checkout develop
+git merge release/0.0.0
+git branch -d feature_branch
+
+## GIT FLOW to hotfix
+
+git checkout main
+git checkout -b hotfix_branch
+# work is done commits are added to the hotfix_branch
+git checkout develop
+git merge hotfix_branch
+git checkout main
+git merge hotfix_branch
 
 
 ## How to install the project
