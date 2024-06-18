@@ -75,7 +75,9 @@ git checkout -b feature_branch
 git checkout develop
 git merge feature_branch
 git checkout -b release/0.0.0
-git checkout master
+
+git checkout main
+
 git merge release/0.0.0
 git checkout develop
 git merge release/0.0.0
@@ -100,3 +102,28 @@ git merge hotfix_branch
 the tables to the db needed to auth
 
 3) php artisan breeze:install blade
+
+## How to create the project:
+
+1) composer create-project laravel/laravel ptp_microsites
+
+2) git init
+Do a commit
+
+3) git remote add origin https://github.com/Brayan3268/ptp_microsites.git
+
+4) git branch -M main
+
+5) git push -u origin main
+
+USE GITFLOW
+
+6) composer require laravel/breeze --dev
+
+7) php artisan breeze:install blade
+
+Create a db and configure in the .env
+
+8) php artisan migrate
+
+To run the app: php artisan serve
